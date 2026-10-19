@@ -38,3 +38,18 @@ Sem banco, login, preco, estoque, catalogo, idempotencia ou controle de concorre
 
 ## Entrevista, explicacao de 30 segundos
 "Modelei a interface com UiBinder, conectando os campos XML com @UiField e cliques com @UiHandler. No cliente, a interface assíncrona usa GWT RPC e AsyncCallback para nao bloquear a UI. A servlet implementa o contrato, valida os dados e manipula DTOs serializaveis. Para o MVP usei memoria, mas separaria repository e banco de dados numa evolucao."
+
+
+## Evolucao MVP (Model-View-Presenter)
+- `DeliveryView`: interface UiBinder, captura cliques e atualiza componentes; nao conhece RPC.
+- `DeliveryPresenter`: valida a entrada, chama o RPC e trata `AsyncCallback`.
+- `DeliveryEntryPoint`: cria e conecta View/Presenter/Service.
+- `DeliveryServiceImpl` e os DTOs foram mantidos.
+
+Depois de `mvn clean package`, execute o WAR com o Jetty independente (porta 8890) conforme validado no seu ambiente:
+
+```powershell
+mvn '-Djetty.http.port=8890' org.eclipse.jetty:jetty-maven-plugin:9.4.58.v20250814:run-war
+```
+
+Abra `http://127.0.0.1:8890/index.html`. A compilacao e a execucao deste pacote atualizado ainda precisam ser validadas localmente.
