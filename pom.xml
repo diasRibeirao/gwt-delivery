@@ -6,6 +6,7 @@
     <dependency><groupId>org.gwtproject</groupId><artifactId>gwt-user</artifactId><version>${gwt.version}</version><scope>provided</scope></dependency>
     <dependency><groupId>org.gwtproject</groupId><artifactId>gwt-dev</artifactId><version>${gwt.version}</version><scope>provided</scope></dependency>
     <dependency><groupId>org.gwtproject</groupId><artifactId>gwt-servlet</artifactId><version>${gwt.version}</version></dependency>
+    <dependency><groupId>junit</groupId><artifactId>junit</artifactId><version>4.13.2</version><scope>test</scope></dependency>
   </dependencies>
   <build><finalName>minidelivery</finalName><plugins>
     <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version><configuration><release>11</release></configuration></plugin>
