@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.exemplo</groupId><artifactId>minidelivery</artifactId><version>1.0.0-SNAPSHOT</version><packaging>war</packaging>
+  <properties><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><maven.compiler.release>11</maven.compiler.release><gwt.version>2.13.1</gwt.version></properties>
+  <dependencies>
+    <dependency><groupId>org.gwtproject</groupId><artifactId>gwt-user</artifactId><version>${gwt.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.gwtproject</groupId><artifactId>gwt-dev</artifactId><version>${gwt.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.gwtproject</groupId><artifactId>gwt-servlet</artifactId><version>${gwt.version}</version></dependency>
+  </dependencies>
+  <build><finalName>minidelivery</finalName><plugins>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version><configuration><release>11</release></configuration></plugin>
+    <plugin><groupId>org.codehaus.mojo</groupId><artifactId>gwt-maven-plugin</artifactId><version>2.10.0</version>
+      <configuration><module>br.com.exemplo.delivery.Delivery</module><runTarget>index.html</runTarget><webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory><extraJvmArgs>-Xmx1024m</extraJvmArgs></configuration>
+      <executions><execution><goals><goal>compile</goal></goals><phase>prepare-package</phase></execution></executions>
+    </plugin>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId><version>3.4.0</version></plugin>
+  </plugins></build>
+</project>

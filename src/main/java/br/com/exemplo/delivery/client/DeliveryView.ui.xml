@@ -1,0 +1,35 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+   .container { max-width: 800px; margin: 28px auto; font-family: Arial, sans-serif; }
+   .secao { border: 1px solid #ddd; border-radius: 8px; margin: 14px 0; padding: 16px; }
+   .titulo { color: #24324b; }
+   .campo { margin: 5px 8px 5px 0; }
+   .status { margin: 14px 0; color: #1d683c; font-weight: bold; }
+ </ui:style>
+ <g:HTMLPanel styleName="{style.container}">
+   <h1 class="{style.titulo}">MiniDelivery</h1>
+   <p>MVP GWT + RPC + UiBinder</p>
+   <div class="{style.secao}">
+     <h3>1. Cadastrar restaurante</h3>
+     <g:TextBox ui:field="nomeRestaurante" styleName="{style.campo}"/>
+     <g:TextBox ui:field="categoriaRestaurante" styleName="{style.campo}"/>
+     <g:Button ui:field="botaoCadastrar">Cadastrar</g:Button>
+   </div>
+   <div class="{style.secao}">
+     <h3>2. Buscar restaurante</h3>
+     <g:TextBox ui:field="termoBusca" styleName="{style.campo}"/>
+     <g:Button ui:field="botaoBuscar">Buscar</g:Button>
+     <p>Restaurantes encontrados:</p>
+     <g:ListBox ui:field="listaRestaurantes" visibleItemCount="4" width="350px"/>
+   </div>
+   <div class="{style.secao}">
+     <h3>3. Fazer pedido para restaurante selecionado</h3>
+     <g:TextBox ui:field="cliente" styleName="{style.campo}"/>
+     <g:TextBox ui:field="produto" styleName="{style.campo}"/>
+     <g:IntegerBox ui:field="quantidade" styleName="{style.campo}"/>
+     <g:Button ui:field="botaoPedir">Realizar pedido</g:Button>
+   </div>
+   <g:Label ui:field="status" styleName="{style.status}"/>
+ </g:HTMLPanel>
+</ui:UiBinder>
