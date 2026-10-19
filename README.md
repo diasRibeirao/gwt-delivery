@@ -36,7 +36,7 @@ Alternativa: executar o WAR `target/minidelivery.war` em container Java EE/Servl
 ## Limites do MVP
 Sem banco, login, preco, estoque, catalogo, idempotencia ou controle de concorrencia entre multiplas instancias. Em producao, validar autorizacao, dados, transacoes e persistir em banco; evitar expor detalhes internos de erro para usuario.
 
-## Entrevista, explicacao de 30 segundos
+## explicacao
 "Modelei a interface com UiBinder, conectando os campos XML com @UiField e cliques com @UiHandler. No cliente, a interface assíncrona usa GWT RPC e AsyncCallback para nao bloquear a UI. A servlet implementa o contrato, valida os dados e manipula DTOs serializaveis. Para o MVP usei memoria, mas separaria repository e banco de dados numa evolucao."
 
 
